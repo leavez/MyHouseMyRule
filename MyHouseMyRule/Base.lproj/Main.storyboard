@@ -711,13 +711,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <progressIndicator wantsLayer="YES" maxValue="100" displayedWhenStopped="NO" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="TqR-6r-86D">
-                                <rect key="frame" x="65" y="89" width="184" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="184" id="9FE-FB-hZf"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="-7" width="338" height="20"/>
                             </progressIndicator>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="91l-HX-2WE">
-                                <rect key="frame" x="59" y="42" width="120" height="32"/>
+                                <rect key="frame" x="169" y="74" width="120" height="32"/>
                                 <buttonCell key="cell" type="push" title="switch" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dOZ-yo-Qo5">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -727,7 +724,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PCG-pu-oba">
-                                <rect key="frame" x="230" y="122" width="21" height="15"/>
+                                <rect key="frame" x="173" y="123" width="21" height="15"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="On" id="nuT-yl-spt">
                                     <font key="font" metaFont="controlContent"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -735,28 +732,46 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="12q-5u-Wbe">
-                                <rect key="frame" x="63" y="122" width="74" height="16"/>
+                                <rect key="frame" x="63" y="123" width="74" height="15"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Work Mode" id="3q5-eb-zWB">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jjp-R2-hyG">
+                                <rect key="frame" x="173" y="66" width="98" height="10"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="background is clickable" id="nhq-SI-odt">
+                                    <font key="font" metaFont="system" size="8"/>
+                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="12q-5u-Wbe" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="69" id="727-fQ-1JM"/>
-                            <constraint firstAttribute="bottom" secondItem="12q-5u-Wbe" secondAttribute="bottom" constant="122" id="8o1-he-xvI"/>
-                            <constraint firstAttribute="trailing" secondItem="91l-HX-2WE" secondAttribute="trailing" constant="165" id="HZu-V6-5bZ"/>
-                            <constraint firstAttribute="trailing" secondItem="TqR-6r-86D" secondAttribute="trailing" constant="89" id="IzG-hc-7Qq"/>
-                            <constraint firstItem="TqR-6r-86D" firstAttribute="top" secondItem="PCG-pu-oba" secondAttribute="bottom" constant="14" id="JH3-C0-qD5"/>
-                            <constraint firstAttribute="bottom" secondItem="91l-HX-2WE" secondAttribute="bottom" constant="49" id="K1u-gW-TFW"/>
-                            <constraint firstItem="TqR-6r-86D" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="65" id="Ljj-ly-dyK"/>
-                            <constraint firstItem="12q-5u-Wbe" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="65" id="OVp-9E-Puh"/>
-                            <constraint firstItem="91l-HX-2WE" firstAttribute="top" secondItem="TqR-6r-86D" secondAttribute="bottom" constant="20" id="Y44-Fa-VPq"/>
-                            <constraint firstItem="91l-HX-2WE" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="65" id="fDh-Xf-TQe"/>
-                            <constraint firstItem="PCG-pu-oba" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="70" id="mev-1a-7Hr"/>
-                            <constraint firstAttribute="trailing" secondItem="PCG-pu-oba" secondAttribute="trailing" constant="89" id="tIR-oY-4hN"/>
+                            <constraint firstAttribute="trailing" secondItem="12q-5u-Wbe" secondAttribute="trailing" constant="203" id="5VW-RN-0De"/>
+                            <constraint firstItem="TqR-6r-86D" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="6SR-xw-GeJ"/>
+                            <constraint firstItem="12q-5u-Wbe" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="65" id="7w3-8O-V8P"/>
+                            <constraint firstItem="12q-5u-Wbe" firstAttribute="baseline" secondItem="PCG-pu-oba" secondAttribute="firstBaseline" id="9M7-in-nn0"/>
+                            <constraint firstAttribute="trailing" secondItem="91l-HX-2WE" secondAttribute="trailing" constant="55" id="A1j-9Z-7Sc"/>
+                            <constraint firstItem="91l-HX-2WE" firstAttribute="top" secondItem="PCG-pu-oba" secondAttribute="bottom" constant="21" id="HaG-Nf-ZbN"/>
+                            <constraint firstItem="12q-5u-Wbe" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="69" id="MGh-kj-6PJ"/>
+                            <constraint firstItem="TqR-6r-86D" firstAttribute="top" secondItem="Jjp-R2-hyG" secondAttribute="bottom" constant="54" id="OuQ-HS-dst"/>
+                            <constraint firstItem="91l-HX-2WE" firstAttribute="leading" secondItem="Jjp-R2-hyG" secondAttribute="leading" id="UGh-T5-MAe"/>
+                            <constraint firstItem="Jjp-R2-hyG" firstAttribute="top" secondItem="91l-HX-2WE" secondAttribute="bottom" constant="5" id="ayD-Vm-zVs"/>
+                            <constraint firstAttribute="bottom" secondItem="12q-5u-Wbe" secondAttribute="bottom" constant="123" id="g7d-BL-ZcA"/>
+                            <constraint firstAttribute="trailing" secondItem="TqR-6r-86D" secondAttribute="trailing" id="hKm-38-UEI"/>
+                            <constraint firstItem="12q-5u-Wbe" firstAttribute="top" secondItem="PCG-pu-oba" secondAttribute="top" id="lQW-rR-gbx"/>
+                            <constraint firstItem="PCG-pu-oba" firstAttribute="leading" secondItem="91l-HX-2WE" secondAttribute="leading" id="pRk-Yz-OBH"/>
+                            <constraint firstItem="PCG-pu-oba" firstAttribute="leading" secondItem="12q-5u-Wbe" secondAttribute="trailing" constant="40" id="pTf-3l-ymh"/>
                         </constraints>
+                        <gestureRecognizers>
+                            <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="Hgu-3Q-Zjz">
+                                <connections>
+                                    <action selector="didTapBackground:" target="XfG-lQ-9wD" id="lvL-eB-SjN"/>
+                                </connections>
+                            </clickGestureRecognizer>
+                        </gestureRecognizers>
                     </view>
                     <connections>
                         <outlet property="modeLabel" destination="PCG-pu-oba" id="PJy-KN-frv"/>

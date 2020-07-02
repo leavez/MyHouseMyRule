@@ -32,6 +32,9 @@
 }
 
 
+- (IBAction)didTapBackground:(id)sender {
+    [self didTapSwitchButton:nil];
+}
 
 - (IBAction)didTapSwitchButton:(id)sender {
     [self.progressIndicator startAnimation:nil];
