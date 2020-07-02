@@ -714,7 +714,7 @@
                                 <rect key="frame" x="0.0" y="-7" width="338" height="20"/>
                             </progressIndicator>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="91l-HX-2WE">
-                                <rect key="frame" x="169" y="74" width="120" height="32"/>
+                                <rect key="frame" x="169" y="49" width="120" height="32"/>
                                 <buttonCell key="cell" type="push" title="switch" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dOZ-yo-Qo5">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -724,7 +724,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PCG-pu-oba">
-                                <rect key="frame" x="173" y="123" width="21" height="15"/>
+                                <rect key="frame" x="173" y="98" width="21" height="15"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="On" id="nuT-yl-spt">
                                     <font key="font" metaFont="controlContent"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -732,7 +732,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="12q-5u-Wbe">
-                                <rect key="frame" x="63" y="123" width="74" height="15"/>
+                                <rect key="frame" x="63" y="98" width="74" height="15"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Work Mode" id="3q5-eb-zWB">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -740,10 +740,18 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jjp-R2-hyG">
-                                <rect key="frame" x="173" y="66" width="98" height="10"/>
+                                <rect key="frame" x="173" y="41" width="98" height="10"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="background is clickable" id="nhq-SI-odt">
                                     <font key="font" metaFont="system" size="8"/>
                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="B09-DV-9TX">
+                                <rect key="frame" x="88" y="148" width="163" height="33"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="My house my rule" id="16V-zw-AJT">
+                                    <font key="font" size="21" name="Apple-Chancery"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
@@ -755,11 +763,13 @@
                             <constraint firstItem="12q-5u-Wbe" firstAttribute="baseline" secondItem="PCG-pu-oba" secondAttribute="firstBaseline" id="9M7-in-nn0"/>
                             <constraint firstAttribute="trailing" secondItem="91l-HX-2WE" secondAttribute="trailing" constant="55" id="A1j-9Z-7Sc"/>
                             <constraint firstItem="91l-HX-2WE" firstAttribute="top" secondItem="PCG-pu-oba" secondAttribute="bottom" constant="21" id="HaG-Nf-ZbN"/>
-                            <constraint firstItem="12q-5u-Wbe" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="69" id="MGh-kj-6PJ"/>
-                            <constraint firstItem="TqR-6r-86D" firstAttribute="top" secondItem="Jjp-R2-hyG" secondAttribute="bottom" constant="54" id="OuQ-HS-dst"/>
+                            <constraint firstItem="12q-5u-Wbe" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="94" id="MGh-kj-6PJ"/>
+                            <constraint firstItem="TqR-6r-86D" firstAttribute="top" secondItem="Jjp-R2-hyG" secondAttribute="bottom" constant="29" id="OuQ-HS-dst"/>
+                            <constraint firstItem="B09-DV-9TX" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="PJW-aS-4or"/>
                             <constraint firstItem="91l-HX-2WE" firstAttribute="leading" secondItem="Jjp-R2-hyG" secondAttribute="leading" id="UGh-T5-MAe"/>
+                            <constraint firstItem="B09-DV-9TX" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="26" id="ZAz-fy-Ft7"/>
                             <constraint firstItem="Jjp-R2-hyG" firstAttribute="top" secondItem="91l-HX-2WE" secondAttribute="bottom" constant="5" id="ayD-Vm-zVs"/>
-                            <constraint firstAttribute="bottom" secondItem="12q-5u-Wbe" secondAttribute="bottom" constant="123" id="g7d-BL-ZcA"/>
+                            <constraint firstAttribute="bottom" secondItem="12q-5u-Wbe" secondAttribute="bottom" constant="98" id="g7d-BL-ZcA"/>
                             <constraint firstAttribute="trailing" secondItem="TqR-6r-86D" secondAttribute="trailing" id="hKm-38-UEI"/>
                             <constraint firstItem="12q-5u-Wbe" firstAttribute="top" secondItem="PCG-pu-oba" secondAttribute="top" id="lQW-rR-gbx"/>
                             <constraint firstItem="PCG-pu-oba" firstAttribute="leading" secondItem="91l-HX-2WE" secondAttribute="leading" id="pRk-Yz-OBH"/>
