@@ -12,6 +12,9 @@
 		41DB701224A7B77400E36FC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41DB701124A7B77400E36FC7 /* Assets.xcassets */; };
 		41DB701524A7B77400E36FC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41DB701324A7B77400E36FC7 /* Main.storyboard */; };
 		41DB701824A7B77400E36FC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DB701724A7B77400E36FC7 /* main.m */; };
+		41DB702124A7BCC600E36FC7 /* ServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DB702024A7BCC600E36FC7 /* ServiceManager.m */; };
+		41DB702424A9115E00E36FC7 /* NSArray+HighOrderFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DB702324A9115E00E36FC7 /* NSArray+HighOrderFunction.m */; };
+		41DB702724AA525A00E36FC7 /* STPrivilegedTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DB702524AA525A00E36FC7 /* STPrivilegedTask.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,12 @@
 		41DB701624A7B77400E36FC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41DB701724A7B77400E36FC7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		41DB701924A7B77400E36FC7 /* MyHouseMyRule.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyHouseMyRule.entitlements; sourceTree = "<group>"; };
+		41DB701F24A7BCC600E36FC7 /* ServiceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceManager.h; sourceTree = "<group>"; };
+		41DB702024A7BCC600E36FC7 /* ServiceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServiceManager.m; sourceTree = "<group>"; };
+		41DB702224A9115E00E36FC7 /* NSArray+HighOrderFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+HighOrderFunction.h"; sourceTree = "<group>"; };
+		41DB702324A9115E00E36FC7 /* NSArray+HighOrderFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+HighOrderFunction.m"; sourceTree = "<group>"; };
+		41DB702524AA525A00E36FC7 /* STPrivilegedTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPrivilegedTask.m; sourceTree = "<group>"; };
+		41DB702624AA525A00E36FC7 /* STPrivilegedTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPrivilegedTask.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +70,12 @@
 				41DB700C24A7B77300E36FC7 /* AppDelegate.m */,
 				41DB700E24A7B77300E36FC7 /* ViewController.h */,
 				41DB700F24A7B77300E36FC7 /* ViewController.m */,
+				41DB701F24A7BCC600E36FC7 /* ServiceManager.h */,
+				41DB702024A7BCC600E36FC7 /* ServiceManager.m */,
+				41DB702224A9115E00E36FC7 /* NSArray+HighOrderFunction.h */,
+				41DB702324A9115E00E36FC7 /* NSArray+HighOrderFunction.m */,
+				41DB702624AA525A00E36FC7 /* STPrivilegedTask.h */,
+				41DB702524AA525A00E36FC7 /* STPrivilegedTask.m */,
 				41DB701124A7B77400E36FC7 /* Assets.xcassets */,
 				41DB701324A7B77400E36FC7 /* Main.storyboard */,
 				41DB701624A7B77400E36FC7 /* Info.plist */,
@@ -141,7 +156,10 @@
 			files = (
 				41DB701024A7B77300E36FC7 /* ViewController.m in Sources */,
 				41DB701824A7B77400E36FC7 /* main.m in Sources */,
+				41DB702724AA525A00E36FC7 /* STPrivilegedTask.m in Sources */,
 				41DB700D24A7B77300E36FC7 /* AppDelegate.m in Sources */,
+				41DB702124A7BCC600E36FC7 /* ServiceManager.m in Sources */,
+				41DB702424A9115E00E36FC7 /* NSArray+HighOrderFunction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,7 +227,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -261,7 +279,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;

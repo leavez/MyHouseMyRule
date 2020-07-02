@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +675,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider=""/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -700,18 +702,71 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--MyHouseMyRule-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController title="MyHouseMyRule" id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="338" height="207"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <progressIndicator wantsLayer="YES" maxValue="100" displayedWhenStopped="NO" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="TqR-6r-86D">
+                                <rect key="frame" x="65" y="89" width="184" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="184" id="9FE-FB-hZf"/>
+                                </constraints>
+                            </progressIndicator>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="91l-HX-2WE">
+                                <rect key="frame" x="59" y="42" width="120" height="32"/>
+                                <buttonCell key="cell" type="push" title="switch" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dOZ-yo-Qo5">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="didTapSwitchButton:" target="XfG-lQ-9wD" id="UPc-yA-59q"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PCG-pu-oba">
+                                <rect key="frame" x="230" y="122" width="21" height="15"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="On" id="nuT-yl-spt">
+                                    <font key="font" metaFont="controlContent"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="12q-5u-Wbe">
+                                <rect key="frame" x="63" y="122" width="74" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Work Mode" id="3q5-eb-zWB">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="12q-5u-Wbe" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="69" id="727-fQ-1JM"/>
+                            <constraint firstAttribute="bottom" secondItem="12q-5u-Wbe" secondAttribute="bottom" constant="122" id="8o1-he-xvI"/>
+                            <constraint firstAttribute="trailing" secondItem="91l-HX-2WE" secondAttribute="trailing" constant="165" id="HZu-V6-5bZ"/>
+                            <constraint firstAttribute="trailing" secondItem="TqR-6r-86D" secondAttribute="trailing" constant="89" id="IzG-hc-7Qq"/>
+                            <constraint firstItem="TqR-6r-86D" firstAttribute="top" secondItem="PCG-pu-oba" secondAttribute="bottom" constant="14" id="JH3-C0-qD5"/>
+                            <constraint firstAttribute="bottom" secondItem="91l-HX-2WE" secondAttribute="bottom" constant="49" id="K1u-gW-TFW"/>
+                            <constraint firstItem="TqR-6r-86D" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="65" id="Ljj-ly-dyK"/>
+                            <constraint firstItem="12q-5u-Wbe" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="65" id="OVp-9E-Puh"/>
+                            <constraint firstItem="91l-HX-2WE" firstAttribute="top" secondItem="TqR-6r-86D" secondAttribute="bottom" constant="20" id="Y44-Fa-VPq"/>
+                            <constraint firstItem="91l-HX-2WE" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="65" id="fDh-Xf-TQe"/>
+                            <constraint firstItem="PCG-pu-oba" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="70" id="mev-1a-7Hr"/>
+                            <constraint firstAttribute="trailing" secondItem="PCG-pu-oba" secondAttribute="trailing" constant="89" id="tIR-oY-4hN"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="modeLabel" destination="PCG-pu-oba" id="PJy-KN-frv"/>
+                        <outlet property="progressIndicator" destination="TqR-6r-86D" id="hVO-WN-Ws1"/>
+                        <outlet property="switchButton" destination="91l-HX-2WE" id="JKQ-Fp-Weh"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="4" y="623.5"/>
         </scene>
     </scenes>
 </document>
