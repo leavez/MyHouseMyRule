@@ -145,7 +145,9 @@
     [results addObjectsFromArray:[daemons filter:^BOOL(NSString *obj) {
         return [obj.lastPathComponent containsString:@".moa"];
     }]];
-    
+    [results addObjectsFromArray:[daemons filter:^BOOL(NSString *obj) {
+        return [obj.lastPathComponent.lowercaseString containsString:@"meituan"];
+    }]];
     
     if (isForUnload) {
         [results addObjectsFromArray:[daemons filter:^BOOL(NSString *obj) {
@@ -162,6 +164,9 @@
     }]];
     [results addObjectsFromArray:[agents filter:^BOOL(NSString *obj) {
         return [obj.lastPathComponent containsString:@".moa"];
+    }]];
+    [results addObjectsFromArray:[agents filter:^BOOL(NSString *obj) {
+        return [obj.lastPathComponent.lowercaseString containsString:@"meituan"];
     }]];
     
     if (isForUnload) {
@@ -181,7 +186,10 @@
     [results addObjectsFromArray:[agents filter:^BOOL(NSString *obj) {
        return [obj.lastPathComponent hasPrefix:@"com.symantec."];
     }]];
-
+    [results addObjectsFromArray:[agents filter:^BOOL(NSString *obj) {
+        return [obj.lastPathComponent.lowercaseString containsString:@"meituan"];
+    }]];
+    
     if (isForUnload) {
        [results addObjectsFromArray:[agents filter:^BOOL(NSString *obj) {
            return [obj.lastPathComponent hasPrefix:@"com.cisco.anyconnect"];
