@@ -51,7 +51,9 @@
     __auto_type paths = [self getPlistPaths:!toWorkMode];
     
     // switch the demons
-    NSMutableString *script = [[self switchDeamonsScript:paths enabled:toWorkMode] mutableCopy];
+    NSMutableString *script = [@"whoami; \n" mutableCopy]; // for debug
+    [script appendString:[[self switchDeamonsScript:paths enabled:toWorkMode] mutableCopy]];
+    
     
     // remove the certificate
     NSString *savedCersPath = [NSString stringWithFormat:@"%@/Library/Application Support/MyHouseMyRule", NSHomeDirectory()];
@@ -214,7 +216,7 @@
     return [task terminationStatus];
 }
 
-+ (void)runWithRoot:(NSString *)script {
++ (NSString *)runWithRoot:(NSString *)script {
     
     NSString *scriptTempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"myHouseMyRule.sh"]];
     [script writeToFile:scriptTempPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
@@ -228,7 +230,8 @@
     // Launch it, user is prompted for password
     OSStatus err = [privilegedTask launch];
     [privilegedTask waitUntilExit];
-
+    NSData *data = [[privilegedTask outputFileHandle] readDataToEndOfFile];
+    NSString *output = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     
     if (err == errAuthorizationSuccess) {
         NSLog(@"Task successfully launched");
@@ -242,6 +245,8 @@
     
     // for debug
 //    [[NSFileManager defaultManager] removeItemAtPath:scriptTempPath error:nil];
+    [output writeToFile:[scriptTempPath stringByAppendingString:@".output"] atomically:YES];
+    return output;
 }
 
 
