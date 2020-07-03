@@ -205,11 +205,12 @@
     [task launch];
     [task waitUntilExit];
 
-    NSData *data;
-    data = [file readDataToEndOfFile];
-
-    NSString *string = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
-    *output = string;
+    if (output) {
+        NSData *data;
+        data = [file readDataToEndOfFile];
+        NSString *string = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
+        *output = string;
+    }
     return [task terminationStatus];
 }
 
