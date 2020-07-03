@@ -222,7 +222,7 @@
     
     // Create task
     STPrivilegedTask *privilegedTask = [STPrivilegedTask new];
-    [privilegedTask setLaunchPath:@"/bin/bash"];
+    [privilegedTask setLaunchPath:@"/bin/sh"]; // using bash will lose root privilege
     [privilegedTask setArguments:@[scriptTempPath]];
 
     // Launch it, user is prompted for password
