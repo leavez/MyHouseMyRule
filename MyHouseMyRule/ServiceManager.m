@@ -239,7 +239,8 @@
         NSLog(@"Something went wrong");
     }
     
-    [[NSFileManager defaultManager] removeItemAtPath:scriptTempPath error:nil];
+    // for debug
+//    [[NSFileManager defaultManager] removeItemAtPath:scriptTempPath error:nil];
 }
 
 
