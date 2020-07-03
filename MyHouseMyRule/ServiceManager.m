@@ -89,27 +89,38 @@
 
 + (NSString *)switchDeamonsScript:(NSArray<NSString *>*)plistPaths enabled:(BOOL)enabled {
     
-    NSString *script = [[plistPaths map:^id(NSString *obj) {
+    NSArray *commands = [plistPaths map:^id(NSString *obj) {
         if (enabled) {
             return [NSMutableString stringWithFormat:@"launchctl load -w %@;", obj];
         } else {
             return [NSMutableString stringWithFormat:@"launchctl unload -w %@;", obj];
         }
-    }] componentsJoinedByString:@"\n"];
+        
+    }];
+    // /Library 中是要以 root 权限执行的
+    // ~/Library 中的要以普通用户身份执行
+    //
+    // 不知道为什么在用 STPrivilegedTask 获得 root 权限运行时，虽然 whoami 是 root，但 launchctl
+    // 的执行结果不是 root。所以这里使用 sudo 强制 root 执行。
+    commands  = [commands map:^id(NSString *obj) {
+        if ([obj containsString:@"/Users"] || [obj containsString:@"~/"]) {
+            // user's, add nothing
+            return obj;
+        } else {
+            // root
+            return [@"sudo " stringByAppendingString:obj];
+        }
+    }];
+    NSString *script = [commands componentsJoinedByString:@"\n"];
+    
     
     if (!enabled) {
+        // the app is not the service itself, so it will not be killed when service turning off
         NSString *killScript = @""
         "killall -9 itsec-agent \n" // the MOA app
         "ps -Ao comm | grep MOA.app | xargs basename | xargs killall -9 \n" // the MOA app
-        "killall -9 DLPMain \n" // the DLP app
         "killall -9 DLP3.0 \n" // the DLP app
         "ps -Ao comm | grep DLP | xargs basename | xargs killall -9  \n" // the DLP app, TODO container the space, not work
-        "ps -Ao comm | grep cisco | xargs basename | xargs killall -9  \n" // cisco
-        "killall -9 SymDaemon \n" // symantec
-        "killall -9 SymSharedSettingsd \n" // symantec
-        "killall -9 com.symantec.SymLUHelper \n" // symantec
-        "killall -9 com.symantec.symquald \n" // symantec
-        "killall -9 symquald \n" // symantec
         ;
         script = [script stringByAppendingFormat:@"\n\n%@", killScript];
     }
