@@ -12,10 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PasswordManager : NSObject
 
+
 + (BOOL)doesPasswordSetup;
 + (void)saveRootPassword:(NSString *)password;
 + (NSString *)getRootPassword;
 
++ (BOOL)validatePassword:(NSString *)password;
 @end
 
 NS_ASSUME_NONNULL_END
