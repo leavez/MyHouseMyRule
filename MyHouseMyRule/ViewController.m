@@ -66,8 +66,10 @@
 
 - (void)setupPasswordIfNeededWithCompletion:(void(^)(BOOL))completion {
     if ([PasswordManager doesPasswordSetup]) {
-        if (completion) { completion(YES); }
-        return;
+        if ([PasswordManager validatePassword:[PasswordManager getRootPassword]]) {
+            if (completion) { completion(YES); }
+            return;
+        }
     }
     NSStoryboard *sb = [NSStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     PasswordViewController *vc = [sb instantiateControllerWithIdentifier:@"password"];
