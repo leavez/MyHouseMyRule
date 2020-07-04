@@ -787,11 +787,137 @@
                         <outlet property="modeLabel" destination="PCG-pu-oba" id="PJy-KN-frv"/>
                         <outlet property="progressIndicator" destination="TqR-6r-86D" id="hVO-WN-Ws1"/>
                         <outlet property="switchButton" destination="91l-HX-2WE" id="JKQ-Fp-Weh"/>
+                        <segue destination="0EI-Dt-MrM" kind="sheet" identifier="popUp" id="RLe-1t-Wvy"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4" y="623.5"/>
+        </scene>
+        <!--Password View Controller-->
+        <scene sceneID="WXK-D6-M9Q">
+            <objects>
+                <viewController storyboardIdentifier="password" id="0EI-Dt-MrM" customClass="PasswordViewController" sceneMemberID="viewController">
+                    <view key="view" id="nFg-io-qCa">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="200"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="iPq-gF-1cE">
+                                <rect key="frame" x="18" y="149" width="464" height="27"/>
+                                <textFieldCell key="cell" selectable="YES" title="This app require root privilege to turn on/off daemons" id="uZn-wb-j59">
+                                    <font key="font" metaFont="systemSemibold" size="14"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Nd9-zg-gf1">
+                                <rect key="frame" x="18" y="120" width="414" height="32"/>
+                                <textFieldCell key="cell" selectable="YES" title="It will *save* the password for future usages. The password will be encrypted." id="1Sp-2b-87N">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bCE-QO-Nlu">
+                                <rect key="frame" x="148" y="75" width="282" height="21"/>
+                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="eZj-7z-uAG">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <allowedInputSourceLocales>
+                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                    </allowedInputSourceLocales>
+                                </secureTextFieldCell>
+                            </secureTextField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qz8-P0-nCW">
+                                <rect key="frame" x="364" y="7" width="72" height="58"/>
+                                <buttonCell key="cell" type="push" title="Done" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fDG-KT-uUa">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="didTapDone:" target="0EI-Dt-MrM" id="bDv-Yb-awO"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="m2B-ad-FKC">
+                                <rect key="frame" x="278" y="20" width="82" height="32"/>
+                                <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Dt8-Hh-he5">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="didTapCancel:" target="0EI-Dt-MrM" id="1xX-Tp-TkG"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UM7-Nc-lCL">
+                                <rect key="frame" x="18" y="78" width="124" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Account Password: " id="DRW-mm-VKH">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MKj-dD-aRA">
+                                <rect key="frame" x="146" y="51" width="59" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="incorrect" id="Eoj-Zl-cFf">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Qz8-P0-nCW" firstAttribute="top" secondItem="bCE-QO-Nlu" secondAttribute="bottom" constant="14" id="28o-u8-xet"/>
+                            <constraint firstItem="Nd9-zg-gf1" firstAttribute="leading" secondItem="UM7-Nc-lCL" secondAttribute="leading" id="66U-HO-8CJ"/>
+                            <constraint firstItem="iPq-gF-1cE" firstAttribute="top" secondItem="nFg-io-qCa" secondAttribute="top" constant="24" id="6wo-ai-vL2"/>
+                            <constraint firstItem="m2B-ad-FKC" firstAttribute="centerY" secondItem="Qz8-P0-nCW" secondAttribute="centerY" id="7gD-Po-GOg"/>
+                            <constraint firstItem="Nd9-zg-gf1" firstAttribute="trailing" secondItem="bCE-QO-Nlu" secondAttribute="trailing" id="GkY-vC-jT0"/>
+                            <constraint firstItem="MKj-dD-aRA" firstAttribute="top" secondItem="bCE-QO-Nlu" secondAttribute="bottom" constant="8" symbolic="YES" id="IIX-X9-BSA"/>
+                            <constraint firstItem="Qz8-P0-nCW" firstAttribute="leading" secondItem="m2B-ad-FKC" secondAttribute="trailing" constant="16" id="MPd-6x-xXD"/>
+                            <constraint firstItem="bCE-QO-Nlu" firstAttribute="top" secondItem="iPq-gF-1cE" secondAttribute="bottom" constant="53" id="Nfp-Lj-L2c"/>
+                            <constraint firstAttribute="trailing" secondItem="Nd9-zg-gf1" secondAttribute="trailing" constant="20" symbolic="YES" id="UOH-WV-GN5"/>
+                            <constraint firstAttribute="bottom" secondItem="Qz8-P0-nCW" secondAttribute="bottom" constant="14" id="Vlq-rY-2hu"/>
+                            <constraint firstItem="bCE-QO-Nlu" firstAttribute="top" secondItem="Nd9-zg-gf1" secondAttribute="bottom" constant="24" id="Xlv-6A-OWY"/>
+                            <constraint firstItem="bCE-QO-Nlu" firstAttribute="leading" secondItem="UM7-Nc-lCL" secondAttribute="trailing" constant="8" symbolic="YES" id="Y31-au-4UB"/>
+                            <constraint firstItem="bCE-QO-Nlu" firstAttribute="trailing" secondItem="Qz8-P0-nCW" secondAttribute="trailing" id="akG-it-XBg"/>
+                            <constraint firstItem="Nd9-zg-gf1" firstAttribute="top" secondItem="nFg-io-qCa" secondAttribute="top" constant="48" id="bpK-Aw-QSe"/>
+                            <constraint firstItem="UM7-Nc-lCL" firstAttribute="baseline" secondItem="bCE-QO-Nlu" secondAttribute="baseline" id="cfc-96-n46"/>
+                            <constraint firstAttribute="trailing" secondItem="iPq-gF-1cE" secondAttribute="trailing" constant="-30" id="euB-Ah-wHf"/>
+                            <constraint firstItem="m2B-ad-FKC" firstAttribute="top" secondItem="bCE-QO-Nlu" secondAttribute="bottom" constant="27" id="kzi-6J-MQ5"/>
+                            <constraint firstItem="bCE-QO-Nlu" firstAttribute="leading" secondItem="MKj-dD-aRA" secondAttribute="leading" id="s1p-zq-3gk"/>
+                            <constraint firstItem="iPq-gF-1cE" firstAttribute="leading" secondItem="nFg-io-qCa" secondAttribute="leading" constant="20" symbolic="YES" id="tNC-RW-UqJ"/>
+                            <constraint firstItem="iPq-gF-1cE" firstAttribute="leading" secondItem="Nd9-zg-gf1" secondAttribute="leading" id="vLO-fc-mfM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="m2B-ad-FKC" id="5dD-he-ySh"/>
+                        <outlet property="doneButto" destination="Qz8-P0-nCW" id="aG3-nk-pez"/>
+                        <outlet property="hintLabel" destination="MKj-dD-aRA" id="mn9-eA-Akz"/>
+                        <outlet property="passwordField" destination="bCE-QO-Nlu" id="7ew-Vp-5Fh"/>
+                    </connections>
+                </viewController>
+                <customObject id="kOf-na-Vpo" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="531" y="623"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="04r-5f-PAp">
+            <objects>
+                <viewController id="iAM-lh-RPf" sceneMemberID="viewController">
+                    <view key="view" id="j89-fR-Hiv">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="8fS-MK-fqo" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1212" y="611"/>
         </scene>
     </scenes>
 </document>
