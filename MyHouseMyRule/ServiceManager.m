@@ -9,6 +9,7 @@
 #import "ServiceManager.h"
 #import "NSArray+HighOrderFunction.h"
 #import "PasswordManager.h"
+#import "ShellCommand.h"
 
 @implementation ServiceManager
 
@@ -36,7 +37,7 @@
 
 + (BOOL)isOn {
     NSString *output = nil;
-    int exitCode = [self runScript:@"ps -A | grep '.app/Contents/MacOS/itsec-agent'" output:&output];
+    int exitCode = [ShellCommand runScript:@"ps -A | grep '.app/Contents/MacOS/itsec-agent'" output:&output];
     __auto_type lines = [output componentsSeparatedByString:@"\n"];
     lines = [lines filter:^BOOL(NSString *obj) {
         return ![obj containsString:@"grep"] && obj.length > 0;
@@ -75,7 +76,7 @@
         [lines addObject:@"security delete-certificate -c pf.sankuai.info"];
         [lines addObject:@"security delete-certificate -Z 2796BAE63F1801E277261BA0D77770028F20EEE4"]; // 'Go Daddy Class 2 Certification Authority 这个没有 common name ，只能这么删
         NSString *output;
-        [self runScript:@"security find-certificate -aZc 'Go Daddy' | grep SHA-1 | cut -c 13-" output:&output];
+        [ShellCommand runScript:@"security find-certificate -aZc 'Go Daddy' | grep SHA-1 | cut -c 13-" output:&output];
         [[[output componentsSeparatedByString:@"\n"] map:^id(NSString *obj) {
             return [obj stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         }] forEach:^(NSString *obj) {
@@ -95,7 +96,7 @@
     
     __auto_type password = [PasswordManager getRootPassword];
     __auto_type commands = [NSString stringWithFormat:@"bash '%@' '%@' &>'%@.out'", scriptTempPath, password, scriptTempPath];
-    [self run:@"/bin/bash" args:@[@"-c", commands] output:nil];
+    [ShellCommand run:@"/bin/bash" args:@[@"-c", commands] output:nil];
 }
 
 
@@ -220,36 +221,6 @@
     }
         
     return results;
-}
-
-
-
-// MARK: - tool
-
-+(int)runScript:(NSString*)script output:(NSString **)output {
-    return [self run:@"/bin/bash" args:@[@"-c", script] output:output];
-}
-
-+(int)run:(NSString*)path args:(NSArray *)args output:(NSString **)output
-{
-    NSTask *task = [[NSTask alloc] init];
-    [task setLaunchPath:path];
-    [task setArguments:args];
-
-    NSPipe *pipe = [NSPipe pipe];
-    [task setStandardOutput: pipe];
-
-    NSFileHandle *file = [pipe fileHandleForReading];
-
-    [task launch];
-    [task waitUntilExit];
-
-    if (output) {
-        NSData *data = [file readDataToEndOfFile];
-        NSString *string = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
-        *output = string;
-    }
-    return [task terminationStatus];
 }
 
 
