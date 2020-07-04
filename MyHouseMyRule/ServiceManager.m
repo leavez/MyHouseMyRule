@@ -120,7 +120,12 @@
             return obj;
         } else {
             // root
-            return [NSString stringWithFormat:@"sudo %@", obj];
+            NSString *s = [NSString stringWithFormat:@"sudo %@", obj];
+            if ([s containsString:@"unload"]) {
+                s = [s stringByAppendingString:@"\n"];
+                s = [s stringByAppendingString:obj]; // 修复之前版本中因为权限问题，而使用普通用户 enable 的 service
+            }
+            return s;
         }
     }];
     NSString *script = [commands componentsJoinedByString:@"\n"];
