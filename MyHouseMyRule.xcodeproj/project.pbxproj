@@ -16,6 +16,8 @@
 		41DB702424A9115E00E36FC7 /* NSArray+HighOrderFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DB702324A9115E00E36FC7 /* NSArray+HighOrderFunction.m */; };
 		41DB702A24B05C9C00E36FC7 /* NSData+AES256.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DB702924B05C9C00E36FC7 /* NSData+AES256.m */; };
 		41DB702D24B05D0800E36FC7 /* PasswordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DB702C24B05D0800E36FC7 /* PasswordManager.m */; };
+		41DB703024B06FF300E36FC7 /* PasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DB702F24B06FF300E36FC7 /* PasswordViewController.m */; };
+		41DB703324B070A400E36FC7 /* ShellCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DB703224B070A400E36FC7 /* ShellCommand.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,10 @@
 		41DB702924B05C9C00E36FC7 /* NSData+AES256.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES256.m"; sourceTree = "<group>"; };
 		41DB702B24B05D0800E36FC7 /* PasswordManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordManager.h; sourceTree = "<group>"; };
 		41DB702C24B05D0800E36FC7 /* PasswordManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordManager.m; sourceTree = "<group>"; };
+		41DB702E24B06FF300E36FC7 /* PasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordViewController.h; sourceTree = "<group>"; };
+		41DB702F24B06FF300E36FC7 /* PasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordViewController.m; sourceTree = "<group>"; };
+		41DB703124B070A400E36FC7 /* ShellCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShellCommand.h; sourceTree = "<group>"; };
+		41DB703224B070A400E36FC7 /* ShellCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShellCommand.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,12 +79,16 @@
 				41DB700C24A7B77300E36FC7 /* AppDelegate.m */,
 				41DB700E24A7B77300E36FC7 /* ViewController.h */,
 				41DB700F24A7B77300E36FC7 /* ViewController.m */,
+				41DB702E24B06FF300E36FC7 /* PasswordViewController.h */,
+				41DB702F24B06FF300E36FC7 /* PasswordViewController.m */,
 				41DB701F24A7BCC600E36FC7 /* ServiceManager.h */,
 				41DB702024A7BCC600E36FC7 /* ServiceManager.m */,
 				41DB702224A9115E00E36FC7 /* NSArray+HighOrderFunction.h */,
 				41DB702324A9115E00E36FC7 /* NSArray+HighOrderFunction.m */,
 				41DB702824B05C9C00E36FC7 /* NSData+AES256.h */,
 				41DB702924B05C9C00E36FC7 /* NSData+AES256.m */,
+				41DB703124B070A400E36FC7 /* ShellCommand.h */,
+				41DB703224B070A400E36FC7 /* ShellCommand.m */,
 				41DB702B24B05D0800E36FC7 /* PasswordManager.h */,
 				41DB702C24B05D0800E36FC7 /* PasswordManager.m */,
 				41DB701124A7B77400E36FC7 /* Assets.xcassets */,
@@ -162,8 +172,10 @@
 				41DB702D24B05D0800E36FC7 /* PasswordManager.m in Sources */,
 				41DB701024A7B77300E36FC7 /* ViewController.m in Sources */,
 				41DB701824A7B77400E36FC7 /* main.m in Sources */,
+				41DB703324B070A400E36FC7 /* ShellCommand.m in Sources */,
 				41DB700D24A7B77300E36FC7 /* AppDelegate.m in Sources */,
 				41DB702124A7BCC600E36FC7 /* ServiceManager.m in Sources */,
+				41DB703024B06FF300E36FC7 /* PasswordViewController.m in Sources */,
 				41DB702A24B05C9C00E36FC7 /* NSData+AES256.m in Sources */,
 				41DB702424A9115E00E36FC7 /* NSArray+HighOrderFunction.m in Sources */,
 			);

@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "ServiceManager.h"
+#import "PasswordManager.h"
+#import "PasswordViewController.h"
 
 @interface ViewController()
 //@property BOOL isWorkModeOn;
@@ -37,21 +39,40 @@
 }
 
 - (IBAction)didTapSwitchButton:(id)sender {
-    [self.progressIndicator startAnimation:nil];
-    self.switchButton.enabled = NO;
-
-    __weak typeof(self) wself = self;
-    __auto_type completion = ^(){
-        [wself.progressIndicator stopAnimation:nil];
-        [wself refreashModeUI];
-        wself.switchButton.enabled = YES;
-    };
     
-    if ([ServiceManager isOn]) {
-        [ServiceManager stopWithCompletion:completion];
-    } else {
-        [ServiceManager startWithCompletion:completion];
+    [self setupPasswordIfNeededWithCompletion:^(BOOL succeed) {
+        if (!succeed) {
+            return;
+        }
+        
+        [self.progressIndicator startAnimation:nil];
+        self.switchButton.enabled = NO;
+        
+        __weak typeof(self) wself = self;
+        __auto_type completion = ^(){
+            [wself.progressIndicator stopAnimation:nil];
+            [wself refreashModeUI];
+            wself.switchButton.enabled = YES;
+        };
+        
+        if ([ServiceManager isOn]) {
+            [ServiceManager stopWithCompletion:completion];
+        } else {
+            [ServiceManager startWithCompletion:completion];
+        }
+    }];
+    
+}
+
+- (void)setupPasswordIfNeededWithCompletion:(void(^)(BOOL))completion {
+    if ([PasswordManager doesPasswordSetup]) {
+        if (completion) { completion(YES); }
+        return;
     }
+    NSStoryboard *sb = [NSStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    PasswordViewController *vc = [sb instantiateControllerWithIdentifier:@"password"];
+    [vc setCompletion:completion];
+    [self presentViewControllerAsSheet:vc];
 }
 
 
