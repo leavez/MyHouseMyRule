@@ -14,7 +14,8 @@
 		41DB701824A7B77400E36FC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DB701724A7B77400E36FC7 /* main.m */; };
 		41DB702124A7BCC600E36FC7 /* ServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DB702024A7BCC600E36FC7 /* ServiceManager.m */; };
 		41DB702424A9115E00E36FC7 /* NSArray+HighOrderFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DB702324A9115E00E36FC7 /* NSArray+HighOrderFunction.m */; };
-		41DB702724AA525A00E36FC7 /* STPrivilegedTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DB702524AA525A00E36FC7 /* STPrivilegedTask.m */; };
+		41DB702A24B05C9C00E36FC7 /* NSData+AES256.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DB702924B05C9C00E36FC7 /* NSData+AES256.m */; };
+		41DB702D24B05D0800E36FC7 /* PasswordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DB702C24B05D0800E36FC7 /* PasswordManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +33,10 @@
 		41DB702024A7BCC600E36FC7 /* ServiceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServiceManager.m; sourceTree = "<group>"; };
 		41DB702224A9115E00E36FC7 /* NSArray+HighOrderFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+HighOrderFunction.h"; sourceTree = "<group>"; };
 		41DB702324A9115E00E36FC7 /* NSArray+HighOrderFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+HighOrderFunction.m"; sourceTree = "<group>"; };
-		41DB702524AA525A00E36FC7 /* STPrivilegedTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPrivilegedTask.m; sourceTree = "<group>"; };
-		41DB702624AA525A00E36FC7 /* STPrivilegedTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPrivilegedTask.h; sourceTree = "<group>"; };
+		41DB702824B05C9C00E36FC7 /* NSData+AES256.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+AES256.h"; sourceTree = "<group>"; };
+		41DB702924B05C9C00E36FC7 /* NSData+AES256.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES256.m"; sourceTree = "<group>"; };
+		41DB702B24B05D0800E36FC7 /* PasswordManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordManager.h; sourceTree = "<group>"; };
+		41DB702C24B05D0800E36FC7 /* PasswordManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +77,10 @@
 				41DB702024A7BCC600E36FC7 /* ServiceManager.m */,
 				41DB702224A9115E00E36FC7 /* NSArray+HighOrderFunction.h */,
 				41DB702324A9115E00E36FC7 /* NSArray+HighOrderFunction.m */,
-				41DB702624AA525A00E36FC7 /* STPrivilegedTask.h */,
-				41DB702524AA525A00E36FC7 /* STPrivilegedTask.m */,
+				41DB702824B05C9C00E36FC7 /* NSData+AES256.h */,
+				41DB702924B05C9C00E36FC7 /* NSData+AES256.m */,
+				41DB702B24B05D0800E36FC7 /* PasswordManager.h */,
+				41DB702C24B05D0800E36FC7 /* PasswordManager.m */,
 				41DB701124A7B77400E36FC7 /* Assets.xcassets */,
 				41DB701324A7B77400E36FC7 /* Main.storyboard */,
 				41DB701624A7B77400E36FC7 /* Info.plist */,
@@ -154,11 +159,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41DB702D24B05D0800E36FC7 /* PasswordManager.m in Sources */,
 				41DB701024A7B77300E36FC7 /* ViewController.m in Sources */,
 				41DB701824A7B77400E36FC7 /* main.m in Sources */,
-				41DB702724AA525A00E36FC7 /* STPrivilegedTask.m in Sources */,
 				41DB700D24A7B77300E36FC7 /* AppDelegate.m in Sources */,
 				41DB702124A7BCC600E36FC7 /* ServiceManager.m in Sources */,
+				41DB702A24B05C9C00E36FC7 /* NSData+AES256.m in Sources */,
 				41DB702424A9115E00E36FC7 /* NSArray+HighOrderFunction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
