@@ -59,6 +59,7 @@
     [lines addObject:[self switchDeamonsScript:paths enabled:toWorkMode]];
     
     
+    
     // remove the certificate
     NSString *savedCersPath = [NSString stringWithFormat:@"%@/Library/Application Support/MyHouseMyRule", NSHomeDirectory()];
     NSString *keychainPath = [NSString stringWithFormat:@"%@/Library/Keychains/login.keychain", NSHomeDirectory()];
@@ -89,6 +90,19 @@
         [lines addObject:[NSString stringWithFormat:@"security import '%@/1.pem' -k '%@'", savedCersPath, keychainPath]];
         [lines addObject:[NSString stringWithFormat:@"security import '%@/2.pem' -k '%@'", savedCersPath, keychainPath]];
     }
+    
+    // remove the kexts
+    if (!toWorkMode) {
+        NSString *kextBackupPath = [savedCersPath stringByAppendingPathComponent:@"kexts"];
+        [lines addObject:[NSString stringWithFormat:@"mkdir -p '%@'", kextBackupPath]];
+        for (NSString *k in @[@"acsock", @"NortonForMac", @"SymInternetSecurity", @"SymIPS", @"SymXIPS"]) {
+            [lines addObject:[NSString stringWithFormat:@"sudo mv '/Library/Extensions/%@.kext' '%@/'", k, kextBackupPath]];
+        }
+        if ([[NSFileManager defaultManager] fileExistsAtPath:@"/Library/Extensions/NortonForMac.kext"]) {
+            [lines addObject:@"osascript -e 'display notification \"USB disk will be available after restart\" with title \"MyHouseMyRule\"'"];
+        }
+    }
+
     
     __auto_type script = [lines componentsJoinedByString:@"\n"];
     NSString *scriptTempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"myHouseMyRule.sh"]];
