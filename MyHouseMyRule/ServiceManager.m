@@ -171,6 +171,11 @@
         [results addObjectsFromArray:[daemons filter:^BOOL(NSString *obj) {
             return [obj.lastPathComponent hasPrefix:@"com.symantec."];
         }]];
+    } else {
+        // need this service on for updating symantec definations (manually)
+        [results addObjectsFromArray:[daemons filter:^BOOL(NSString *obj) {
+            return [obj.lastPathComponent hasPrefix:@"com.symantec.SymLUHelper"];
+        }]];
     }
     
     // /Library/LaunchAgents
